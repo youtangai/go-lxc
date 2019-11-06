@@ -1808,6 +1808,7 @@ func (c *Container) Migrate(cmd uint, opts MigrateOptions) error {
 		action_script:     cActionScript,
 		ghost_limit:       C.uint64_t(opts.GhostLimit),
 		features_to_check: C.uint64_t(opts.FeaturesToCheck),
+		is_zanshin:        C.bool(opts.IsZanshin),
 	}
 
 	ret := C.int(C.go_lxc_migrate(c.container, C.uint(cmd), &copts, &extras))
