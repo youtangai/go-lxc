@@ -1797,6 +1797,8 @@ func (c *Container) Migrate(cmd uint, opts MigrateOptions) error {
 		predump_dir: cpredumpdir,
 	}
 
+	fmt.Printf("youtangai: copts: %v\n", copts)
+
 	var cActionScript *C.char
 	if opts.ActionScript != "" {
 		cActionScript = C.CString(opts.ActionScript)
