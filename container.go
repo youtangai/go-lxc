@@ -1814,6 +1814,7 @@ func (c *Container) Migrate(cmd uint, opts MigrateOptions) error {
 	}
 
 	ret := C.int(C.go_lxc_migrate(c.container, C.uint(cmd), &copts, &extras))
+	fmt.Printf("youtangai: lxc_migrate ret: %d", ret)
 	if ret != 0 {
 		return fmt.Errorf("migration failed %d", ret)
 	}
